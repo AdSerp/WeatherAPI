@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import CurrentWeather from './components/CurrentWeather';
 import CityWeather from './components/CityWeather';
+import CurrentForecast from './components/CurrentForecast'; // Nueva importación
+import CityForecast from './components/CityForecast'; // Nueva importación
 
 const cities = [
   { name: 'Madrid', lat: 40.4168, lon: -3.7038 },
@@ -15,11 +17,14 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Clima Actual</Link> | <Link to="/city-weather">Buscar por Ciudad</Link>
+        <Link to="/">Clima Actual</Link> | <Link to="/city-weather">Buscar por Ciudad</Link> |{' '}
+        <Link to="/current-forecast">Previsión Actual</Link> | <Link to="/city-forecast">Previsión por Ciudad</Link>
       </nav>
       <Routes>
         <Route path="/" element={<CurrentWeather />} />
         <Route path="/city-weather" element={<CityWeather cities={cities} />} />
+        <Route path="/current-forecast" element={<CurrentForecast />} /> {/* Nueva ruta */}
+        <Route path="/city-forecast" element={<CityForecast cities={cities} />} /> {/* Nueva ruta */}
       </Routes>
     </Router>
   );
