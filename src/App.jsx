@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import CurrentWeather from './components/CurrentWeather';
-import CityWeather from './components/CityWeather';
-import CurrentForecast from './components/CurrentForecast'; // Nueva importación
-import CityForecast from './components/CityForecast'; // Nueva importación
+import CurrentWeather from './Components/CurrentWeather';
+import CityWeather from './Components/CityWeather';
+import CurrentForecast from './Components/CurrentForecast';
+import CityForecast from './Components/CityForecast'; 
 
 const cities = [
   { name: 'Madrid', lat: 40.4168, lon: -3.7038 },
